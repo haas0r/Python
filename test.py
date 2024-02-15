@@ -1,11 +1,8 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+def test_substring(full_string, substring):
+    assert substring in full_string, f'expected {substring} to be substring of {full_string}'
 
-browser = webdriver.Chrome()
-browser.get("http://suninjuly.github.io/wait1.html")
 
-button = browser.find_element(By.ID, "verify")
-button.click()
-message = browser.find_element(By.ID, "verify_message")
+x = 'some_text'
+y = 'some'
 
-assert "successful" in message.text
+test_substring(x,y)
